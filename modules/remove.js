@@ -1,5 +1,4 @@
-// ./module/remove.js
-import AwesomeBooksColletions from "./collection.js";
+import AwesomeBooksColletions from './collection.js';
 
 const collection = new AwesomeBooksColletions();
 
@@ -11,7 +10,7 @@ export default class Removal {
     collection.saveToLG();
     if (collection.books.length === 0) {
       collection.bookListContainer.classList.remove('add-border');
-      //collection.noBookMsg();
+      // collection.noBookMsg();
     }
   }
 }

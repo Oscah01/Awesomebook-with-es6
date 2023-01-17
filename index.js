@@ -1,5 +1,6 @@
-import Addition from "./modules/add.js";
-import { displayBooks } from "./modules/display.js";
+import Addition from './modules/add.js';
+import { displayBooks } from './modules/display.js';
+
 const addBookForm = document.getElementById('add-book');
 function handleSubmit(e) {
   e.preventDefault();
@@ -7,7 +8,6 @@ function handleSubmit(e) {
   const author = addBookForm.author.value;
   const newBook = { title, author, id: `${Date.now()}` };
   const addition = new Addition();
-  console.log(newBook)
   addition.add(newBook);
   e.target.reset();
 }
