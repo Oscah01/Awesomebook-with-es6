@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Oscah01/Awesomebook-with-es6/issues"
   },
-  "homepage": "https://github.com/Oscah01/Awesomebook-with-es6#readme"
+  "homepage": "https://github.com/Oscah01/Awesomebook-with-es6#readme",
+  "devDependencies": {
+    "hint": "^7.1.3"
+  }
 }
