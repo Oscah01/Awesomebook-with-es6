@@ -3,11 +3,17 @@ import AwesomeBooksColletions from './collection.js';
 const collection = new AwesomeBooksColletions();
 
 export default class Removal {
-  removeBookFromTheDom(btn, id) {
-    const root = btn.parentNode;
+  constructor(btn, id) {
+    this.btn = btn;
+    this.id = id;
+  }
+
+  removeBookFromTheDom() {
+    const root = this.btn.parentNode;
     root.parentNode?.removeChild(root);
-    collection.books = collection.books.filter((book) => book.id !== id);
-    collection.saveToLG();
+    localStorage.setItem('books', JSON.stringify(this.books));
+    collection.books = collection.books.filter((book) => book.id !== this.id);
+    localStorage.setItem('books', JSON.stringify(collection.books));
     if (collection.books.length === 0) {
       collection.bookListContainer.classList.remove('add-border');
       // collection.noBookMsg();
