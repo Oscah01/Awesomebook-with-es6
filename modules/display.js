@@ -1,4 +1,4 @@
-//display.js
+// display.js
 import AwesomeBooksColletions from './collection.js';
 import Removal from './remove.js';
 

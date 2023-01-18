@@ -1,4 +1,4 @@
-//index.js
+// index.js
 import Addition from './modules/add.js';
 import AwesomeBooksColletions from './modules/collection.js';
 import DisplayBooks from './modules/display.js';
