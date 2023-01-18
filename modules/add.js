@@ -1,7 +1,6 @@
-import AwesomeBooksColletions from './collection.js';
+// add.js
 import DisplayBooks from './display.js';
 
-const collection = new AwesomeBooksColletions();
 export default class Addition {
   constructor(book) {
     this.book = book;
@@ -9,8 +8,9 @@ export default class Addition {
   }
 
   add() {
-    collection.books = [this.book, ...collection.books];
-    localStorage.setItem('books', JSON.stringify(collection.books));
-    this.display.display();
+    let books = JSON.parse(localStorage.getItem('books')) || [];
+    books = [this.book, ...books];
+    localStorage.setItem('books', JSON.stringify(books));
+    window.location.reload();
   }
 }

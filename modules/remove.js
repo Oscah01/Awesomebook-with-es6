@@ -1,7 +1,4 @@
-import AwesomeBooksColletions from './collection.js';
-
-const collection = new AwesomeBooksColletions();
-
+// remove.js
 export default class Removal {
   constructor(btn, id) {
     this.btn = btn;
@@ -9,14 +6,11 @@ export default class Removal {
   }
 
   removeBookFromTheDom() {
+    let books = JSON.parse(localStorage.getItem('books')) || [];
     const root = this.btn.parentNode;
     root.parentNode?.removeChild(root);
-    localStorage.setItem('books', JSON.stringify(this.books));
-    collection.books = collection.books.filter((book) => book.id !== this.id);
-    localStorage.setItem('books', JSON.stringify(collection.books));
-    if (collection.books.length === 0) {
-      collection.bookListContainer.classList.remove('add-border');
-      // collection.noBookMsg();
-    }
+
+    books = books.filter((book) => book.id !== this.id);
+    localStorage.setItem('books', JSON.stringify(books));
   }
 }

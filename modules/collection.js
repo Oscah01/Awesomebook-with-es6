@@ -1,16 +1,8 @@
+// collection.js
 export default class AwesomeBooksColletions {
   constructor() {
-    this.books = JSON.parse(localStorage.getItem('books')) || [];
     this.bookListContainer = document.getElementById('book-list');
-    this.timeContainer = document.getElementById('time');
-    this.navItems = document.querySelectorAll('.nav-item');
     this.sections = document.querySelectorAll('.sections');
-    this.navItems.forEach((item, index) => {
-      item.addEventListener('click', () => this.handleClick(index));
-    });
-    setInterval(() => {
-      this.timeContainer.innerText = `${new Date().toUTCString()}`;
-    }, 1000);
   }
 
   handleClick(navIndex) {
@@ -21,10 +13,6 @@ export default class AwesomeBooksColletions {
         section.style.display = 'none';
       }
     });
-  }
-
-  saveToLG() {
-    localStorage.setItem('books', JSON.stringify(this.books));
   }
 
   noBookMsg() {
