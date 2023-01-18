@@ -1,4 +1,4 @@
-// collection.js
+//collection.js
 export default class AwesomeBooksColletions {
   constructor() {
     this.bookListContainer = document.getElementById('book-list');

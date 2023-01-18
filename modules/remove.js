@@ -1,4 +1,4 @@
-// remove.js
+//remove.js
 export default class Removal {
   constructor(btn, id) {
     this.btn = btn;
